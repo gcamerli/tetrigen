@@ -2,31 +2,31 @@
 .PHONY: all clean fclean re
 
 # Compiler and binaries
-CC		=	/usr/bin/gcc
-RM		=	/bin/rm
-MKDIR	=	/usr/bin/mkdir
+CC=/usr/bin/gcc
+RM=/bin/rm
+MKDIR=/usr/bin/mkdir
 
 # Colors
-GREEN		=	\033[0;32m
-BLUE		=	\033[0;34m
-RED			=	\033[0;31m
-NC			=	\033[0m
+GREEN=\033[0;32m
+BLUE=\033[0;34m
+RED=\033[0;31m
+NC=\033[0m
 
 # Program name
-NAME 	= tetrigen
+NAME=tetrigen
 
 # Soruce and objects
-SRCDIR	=	src
+SRCDIR=src
 
-SRC 	=	$(wildcard $(SRCDIR)/*.c)
+SRC=$(wildcard $(SRCDIR)/*.c)
 
-OBJDIR	=	obj
+OBJDIR=obj
 
-OBJ		=	$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
+OBJ=$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
 # Flags and include
-CFLAGS	=	-Wall -Wextra -Werror
-INC		=	include
+CFLAGS=-Wall -Wextra -Werror
+INC=include
 
 # Default make
 all: $(OBJDIR) $(NAME)
