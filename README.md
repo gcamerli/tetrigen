@@ -4,6 +4,8 @@
 
 ### **Description**
 
+![tetriminos](img/tetriminos.svg)
+
 **Tetrigen** is a random tetriminos generator written in **C**, with the purpose
 of creating unit test files for **42** fillit project.
 
@@ -27,6 +29,8 @@ Example:
 $ ./tetrigen -v -f 26
 ```
 
+The output of this example will be a valid file of 26 tetriminos saved in **test.fillit**.
+
 ### **Options**
 
 **[options #1]**
@@ -34,7 +38,7 @@ $ ./tetrigen -v -f 26
 + -i: invalid map
 
 **[options #2]**
-+ -f: write the map in a file: test.fillit
++ -f: write the map in a file (test.fillit)
 + -s: send the map directly to the stdin
 
 **[number]**
