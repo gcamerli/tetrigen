@@ -40,13 +40,19 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 # Clean objects
 clean:
-	@$(RM) -rf $(OBJDIR)
-	@printf "$(BLUE) ✗ Deletion of object files\n"
+	@if [ -e $(OBJDIR) ]; \
+	then \
+		$(RM) -rf $(OBJDIR); \
+		printf "$(BLUE) ✗ Deletion of object files\n"; \
+	fi;
 
 # Clean in depth
 fclean: clean
-	@$(RM) -f $(NAME)
-	@printf "$(RED) ✗ Deletion of $(NAME)\n"
+	@if [ -e $(NAME) ]; \
+	then \
+		$(RM) -f $(NAME); \
+		printf "$(RED) ✗ Deletion of $(NAME)\n"; \
+	fi;
 
 # Remake
 re: fclean all
