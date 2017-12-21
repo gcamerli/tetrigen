@@ -10,7 +10,6 @@ MKDIR=/usr/bin/mkdir
 GREEN=\033[0;32m
 BLUE=\033[0;34m
 RED=\033[0;31m
-NC=\033[0m
 
 # Program name
 NAME=tetrigen
@@ -24,34 +23,37 @@ OBJDIR=obj
 
 OBJ=$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
-# Flags and include
+# Flags, include, header
 CFLAGS=-Wall -Wextra -Werror
-INC=include
+
+INC=include/
+
+HEADER=$(INC)tetrigen.h
 
 # Default make
 all: $(OBJDIR) $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(HEADER) $(SRC) $(OBJ) Makefile
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@printf "$(GREEN) ✓ Building $(NAME)\n"
-	@$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@printf "$(GREEN) ✓ Creating file $@\n"
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	@printf "$(GREEN) ✓ Building $@\n"
 
 # Clean objects
 clean:
+	@$(RM) -rf $(OBJDIR)
 	@printf "$(BLUE) ✗ Deletion of object files\n"
-	@rm -rf $(OBJDIR)
 
 # Clean in depth
 fclean: clean
-	@printf "$(RED) ✗ Deletion of $(NAME)\n"
 	@$(RM) -f $(NAME)
+	@printf "$(RED) ✗ Deletion of $(NAME)\n"
 
 # Remake
 re: fclean all
 
 $(OBJDIR):
-	@printf "$(GREEN) ✓ Creation of $(OBJDIR) dir\n"
 	@$(MKDIR) $(OBJDIR)
+	@printf "$(GREEN) ✓ Creating $(OBJDIR) dir\n"
