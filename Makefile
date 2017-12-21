@@ -4,7 +4,7 @@
 # Compiler and binaries
 CC=/usr/bin/gcc
 RM=/bin/rm
-MKDIR=/usr/bin/mkdir
+MKDIR=/bin/mkdir
 
 # Colors
 GREEN=\033[0;32m
