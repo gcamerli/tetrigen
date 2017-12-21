@@ -18,8 +18,8 @@ NAME=tetrigen
 SRCDIR=src/
 SRC=$(wildcard $(SRCDIR)*.c)
 
-OBJDIR=obj/
-OBJ=$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRC))
+OBJDIR=obj
+OBJ=$(patsubst $(SRCDIR)%.c,$(OBJDIR)/%.o,$(SRC))
 
 # Flags, include, header
 CFLAGS=-Wall -Wextra -Werror
