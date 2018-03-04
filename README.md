@@ -48,6 +48,6 @@ The output of this example will be a valid file of 26 tetriminos saved in **test
 
 + [hqro](https://github.com/hqro)
 
-### **CC License**
+### **License**
 
-This work is provided under the terms of this license: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
